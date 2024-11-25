@@ -1,4 +1,4 @@
-package UserService
+package db
 
 import (
     "time"
@@ -25,5 +25,9 @@ type Token struct {
 
 
 type UserRepository interface {
-    
+    Create(user *User) error
+    FindByID(id int) (*User, error)
+    FindByEmail(email string) (*User, error)
+    Update(user *User) error
+    Delete(id int) error
 }
