@@ -1,0 +1,5 @@
+CREATE TABLE tags (
+    id BIGSERIAL NOT NULL,
+    name VARCHAR(32) NOT NULL,
+    user_id BIGINT NOT NULL REFERENCES "users"(id) ON DELETE CASCADE
+);
